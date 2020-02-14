@@ -24,7 +24,6 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #if defined(__WIN32__) || defined(_WIN32) || defined(_QNX4)
 #define snprintf _snprintf
 #endif
-#define HACK_FOR_CHROME_WEBRTC_BUG 1 //#####@@@@@
 
 ////////// RTCPMemberDatabase //////////
 
@@ -428,7 +427,7 @@ void RTCPInstance::incomingReportHandler1() {
       envir() << "RTCPInstance error: Hit limit when reading incoming packet over TCP. (fNumBytesAlreadyRead ("
 	      << fNumBytesAlreadyRead << ") >= maxRTCPPacketSize (" << maxRTCPPacketSize
 	      << ")).  The remote endpoint is using a buggy implementation of RTP/RTCP-over-TCP.  Please upgrade it!\n";
-      exit(1);
+      break;
     }
 
     unsigned numBytesRead;

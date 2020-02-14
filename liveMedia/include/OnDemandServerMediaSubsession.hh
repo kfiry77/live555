@@ -125,7 +125,7 @@ public:
     // of "name" are used.  (If "name" has fewer than 4 bytes, or is NULL,
     // then the remaining bytes are '\0'.)
 
-private:
+protected:
   void setSDPLinesFromRTPSink(RTPSink* rtpSink, FramedSource* inputSource,
 			      unsigned estBitrate);
       // used to implement "sdpLines()"
